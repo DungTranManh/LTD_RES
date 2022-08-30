@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            background-color: #B3D5DD;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        .navi{
+            width: 862px;
+            height: 60.5px;
+            padding-left: 100px;
+            padding-top: 30px;
+            background-color: #EC8787;
+            border-radius: 20px;
+            outline-color: #000000;
+        }
+        .navi a {
+            color: #000000;
+            margin-right: 15px;
+            margin-left: 50px;
+            font-size: 30px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    {% comment %} Logo Header {% endcomment %}
+    <img src="{% static '/images/logo-header.jpg' %}" alt="logo-header" class="center">
+
+    {% comment %} Navi & Search Bar {% endcomment %}
+    <div class='navi'>
+        <a href="#" >Home</a>
+        <a href="#" >Nhà Hàng</a>
+        <a href="#" >Sản Phẩm</a>
+        <a href="#">Khuyến mãi</a>
+    </div> 
+    
+    
+</body>
+</html>
