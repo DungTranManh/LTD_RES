@@ -83,12 +83,13 @@
 
       /* Slideshow container */
       .slideshow-container {
-        max-width: 1000px;
+        max-width: 1920px;
         position: absolute;
         top: 300px;
-        left: 240px;
-        width: 200%;
+        left: 120px;
+        width:2000px;
         margin: auto;
+        border-radius: 20px;
       }
 
       /* Next & previous buttons */
@@ -98,19 +99,19 @@
         position: absolute;
         top: 50%;
         width: auto;
-        padding: 16px;
-        margin-top: 50px;
+        padding: 9px;
+        margin-top: -40px;
         color: white;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 70px;
         transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
+        border-radius: 10px;
         user-select: none;
       }
 
       /* Position the "next button" to the right */
       .next {
-        right: 0;
+        right: -384px;
         border-radius: 3px 0 0 3px;
       }
 
@@ -202,22 +203,22 @@
     <div class="slideshow-container">
       <div class="mySlides fade">
         <img
-          src="{% static '/images/slideshow_image1.jpg' %}"
-          style="width: 200%  height: 70%;"
+          src="{% static '/images/slideshow_image6.jpg' %}"
+          style="width: 120%;  height: 70%; border-radius: 20px;"
         />
       </div>
 
       <div class="mySlides fade">
         <img
-          src="{% static '/images/slideshow_image2.jpg' %}"
-          style="width: 200% height: 70%;"
+          src="{% static '/images/slideshow_image7.jpg' %}"
+          style="width: 120%; height: 70%; border-radius: 20px;"
         />
       </div>
 
       <div class="mySlides fade">
         <img
-          src="{% static '/images/slideshow_image3.jpg' %}"
-          style="width: 200% height: 70%;"
+          src="{% static '/images/slideshow_image8.jpg' %}"
+          style="width: 120%; height: 70%; border-radius: 20px;"
         />
       </div>
 
@@ -226,11 +227,11 @@
     </div>
     <br />
 
-    <div style="text-align: center">
+    {% comment %} <div style="text-align: center">
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
+    </div> {% endcomment %}
 
     <script>
       let slideIndex = 1;
