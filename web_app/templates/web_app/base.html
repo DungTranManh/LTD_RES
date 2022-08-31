@@ -15,16 +15,18 @@
       }
       .logo {
         margin-left: 40px;
+        width: 400px;
+        height: 300px;
       }
       .navi {
         width: 920px;
         height: 90.5px;
         padding-left: 60px;
         padding-top: 30px;
-        margin-left: 150px;
-        margin-top: 50px;
+        margin-left: 200px !important;
         background-color: #ec8787;
         border-radius: 20px;
+        margin-top: 100px;
       }
       .navi a {
         color: #000000;
@@ -37,7 +39,6 @@
       .search-bar {
         height: 100px;
         margin-left: 100px;
-        margin-top: 50px;
         float: left;
       }
       .button-form {
@@ -58,8 +59,7 @@
         font-size: 30px;
         padding: 12px 25px;
         border: none;
-        margin-left: 50px;
-        margin-top: 50px;
+        margin-top: 100px;
       }
       ::placeholder {
         color: #696969;
@@ -69,6 +69,7 @@
       }
       .NaviAndSearchbar {
         float: left;
+        margin-left: 150px;
       }
       /* css slideshow */
       * {
@@ -85,9 +86,9 @@
       .slideshow-container {
         max-width: 1920px;
         position: absolute;
-        top: 300px;
-        left: 120px;
-        width:2000px;
+        top: 350px;
+        left: 300px;
+        width: 2000px;
         margin: auto;
         border-radius: 20px;
       }
@@ -170,33 +171,35 @@
       class="center"
     />
     {% endcomment %} {% comment %} Navi & Search Bar {% endcomment %}
-    <div class="NaviAndSearchbar navi">
-      <a href="#">Home</a>
-      <a href="#">Nhà Hàng</a>
-      <a href="#">Sản Phẩm</a>
-      <a href="#">Khuyến mãi</a>
-    </div>
-    <img
-      src="{% static '/images/logo-header.jpg' %}"
-      alt="logo-header"
-      class="NaviAndSearchbar logo"
-      alt="logo-header"
-    />
-    <div class="NaviAndSearchbar">
-      <form action="">
-        <input
-          type="search"
-          class="input-form"
-          name="search-value"
-          placeholder="Nhập thông tin tìm kiếm..."
-        />
-        <button class="button-form" type="submit">
-          <img
-            src="{% static '/images/search-icon.png' %}"
-            alt="search-icon "
+    <div class='centerHeader'></div>
+      <div class="NaviAndSearchbar navi">
+        <a href="#">Home</a>
+        <a href="#">Nhà Hàng</a>
+        <a href="#">Sản Phẩm</a>
+        <a href="#">Khuyến mãi</a>
+      </div>
+      <img
+        src="{% static '/images/logo-header.jpg' %}"
+        alt="logo-header"
+        class="NaviAndSearchbar logo"
+        alt="logo-header"
+      />
+      <div class="NaviAndSearchbar">
+        <form action="">
+          <input
+            type="search"
+            class="input-form"
+            name="search-value"
+            placeholder="Nhập thông tin tìm kiếm..."
           />
-        </button>
-      </form>
+          <button class="button-form" type="submit">
+            <img
+              src="{% static '/images/search-icon.png' %}"
+              alt="search-icon "
+            />
+          </button>
+        </form>
+      </div>
     </div>
 
     {% comment %} Slideshow {% endcomment %}
@@ -204,21 +207,21 @@
       <div class="mySlides fade">
         <img
           src="{% static '/images/slideshow_image6.jpg' %}"
-          style="width: 120%;  height: 70%; border-radius: 20px;"
+          style="width: 120%; height: 70%; border-radius: 20px"
         />
       </div>
 
       <div class="mySlides fade">
         <img
           src="{% static '/images/slideshow_image7.jpg' %}"
-          style="width: 120%; height: 70%; border-radius: 20px;"
+          style="width: 120%; height: 70%; border-radius: 20px"
         />
       </div>
 
       <div class="mySlides fade">
         <img
           src="{% static '/images/slideshow_image8.jpg' %}"
-          style="width: 120%; height: 70%; border-radius: 20px;"
+          style="width: 120%; height: 70%; border-radius: 20px"
         />
       </div>
 
@@ -227,11 +230,13 @@
     </div>
     <br />
 
-    {% comment %} <div style="text-align: center">
+    {% comment %}
+    <div style="text-align: center">
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
-    </div> {% endcomment %}
+    </div>
+    {% endcomment %}
 
     <script>
       let slideIndex = 1;
