@@ -31,33 +31,36 @@
       .navi a {
         color: #000000;
         margin-right: auto;
-        margin-left: 50px;
-        font-size: 30px;
+        margin-left: 55px;
+        font-size: 35px;
         text-decoration: none;
-        font-family: Commissioner, Old-style;
       }
       .search-bar {
         height: 100px;
         margin-left: 100px;
         float: left;
+        position: absolute;
       }
       .button-form {
+        position: absolute;
         width: 85px;
         height: 85px;
         background-color: #fff8f8;
         border-radius: 15px;
-        margin-left: 30px;
+        margin-left: 830px;
+        margin-top: 100px;
       }
       /*.form{
         display: flex;
       }*/
       .input-form {
+        position: absolute;
         height: 90.5px;
         width: 800px;
         background-color: #ec8787;
         border-radius: 20px;
-        font-size: 30px;
-        padding: 12px 25px;
+        font-size: 35px;
+        padding: 12px 30px;
         border: none;
         margin-top: 100px;
       }
@@ -161,28 +164,54 @@
           font-size: 11px;
         }
       }
+      .footer {
+        position: absolute;
+        left: 0;
+        margin-top: 100%;
+        width: 100%;
+        height: 400px;
+        background-color: #ec8787;
+        color: #000000;
+      }
+      .logoFooter{
+        height: 300px;
+        width: 400px;
+        position: absolute;
+        margin-top: 45px;
+        margin-left: 250px;
+      }
+      .titleFooter{
+        margin-left: 40%;
+      }
+      .linkPage{
+        float: left;
+        font-size: 40px;
+        margin-top: 70px;
+        color: black;
+      }
+      .seperation{
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .contentFooter{
+        margin-top: 150px;
+        font-size: 40px;
+        margin-left: 40%;
+      }
     </style>
   </head>
   <body>
-    {% comment %} Logo Header {% endcomment %} {% comment %}
-    <img
-      src="{% static '/images/logo-header.jpg' %}"
-      alt="logo-header"
-      class="center"
-    />
-    {% endcomment %} {% comment %} Navi & Search Bar {% endcomment %}
     <div class='centerHeader'></div>
       <div class="NaviAndSearchbar navi">
-        <a href="#">Home</a>
+        <a href="#" style="margin-left: -2px;">Home</a>
         <a href="#">Nhà Hàng</a>
         <a href="#">Sản Phẩm</a>
-        <a href="#">Khuyến mãi</a>
+        <a href="#">Khuyến Mãi</a>
       </div>
       <img
         src="{% static '/images/logo-header.jpg' %}"
         alt="logo-header"
         class="NaviAndSearchbar logo"
-        alt="logo-header"
       />
       <div class="NaviAndSearchbar">
         <form action="">
@@ -230,13 +259,6 @@
     </div>
     <br />
 
-    {% comment %}
-    <div style="text-align: center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-    {% endcomment %}
 
     <script>
       let slideIndex = 1;
@@ -270,5 +292,25 @@
         dots[slideIndex - 1].className += " active";
       }
     </script>
+
+    {% comment %} Footer {% endcomment %}
+    <div class='footer'>
+      <img src="{% static '/images/logo-footer.jpg' %}" alt="logo-footer" class='logoFooter'>
+      <div class='titleFooter'>
+        <a href="#" class="linkPage">Home</a>
+        <h1 class="linkPage seperation "> | </h1>
+        <a href="#" class="linkPage">Nhà Hàng</a>
+        <h1 class="linkPage seperation"> | </h1>
+        <a href="#" class="linkPage">Sản Phẩm</a>
+        <h1 class="linkPage seperation"> | </h1>
+        <a href="#" class="linkPage">Khuyến Mãi</a>
+      </div>
+      <div class='contentFooter'>
+        <p>Địa chỉ:</p>
+        <p>Liên hệ:</p>
+        <p>Email:</p>
+      </div>
+    </div>
+
   </body>
 </html>
