@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
   <body>
-    <div class='centerHeader'></div>
+    <div class='centerHeader total'></div>
       <div class="NaviAndSearchbar navi">
-        <a href="#" style="margin-left: -2px;">Home</a>
-        <a href="#">Nhà Hàng</a>
-        <a href="#">Sản Phẩm</a>
-        <a href="#">Khuyến Mãi</a>
+        <a href="{% url 'web_app:home' %}" style="margin-left: -2px;">Home</a>
+        <a href="{% url 'web_app:nhahang' %}">Nhà Hàng</a>
+        <a href="{% url 'web_app:sanpham' %}">Sản Phẩm</a>
+        <a href="{% url 'web_app:khuyenmai' %}">Khuyến Mãi</a>
       </div>
       <img
         src="{% static '/images/logo-header.jpg' %}"
@@ -42,7 +42,7 @@
     </div>
 
     {% comment %} Slideshow {% endcomment %}
-    <div class="slideshow-container">
+    <div class="slideshow-container total">
       <div class="mySlides fade">
         <img
           src="{% static '/images/slideshow_image6.jpg' %}"
@@ -102,18 +102,22 @@
         dots[slideIndex - 1].className += " active";
       }
     </script>
-
+    {% comment %} main content {% endcomment %}
+    <div class='content total'>
+      {% block content %}
+      {% endblock content %}
+    </div>
     {% comment %} Footer {% endcomment %}
-    <div class='footer'>
+    <div class='footer total'>
       <img src="{% static '/images/logo-footer.jpg' %}" alt="logo-footer" class='logoFooter'>
       <div class='titleFooter'>
-        <a href="#" class="linkPage">Home</a>
+        <a href="{% url 'web_app:home' %}" class="linkPage">Home</a>
         <h1 class="linkPage seperation "> | </h1>
-        <a href="#" class="linkPage">Nhà Hàng</a>
+        <a href="{% url 'web_app:nhahang' %}" class="linkPage">Nhà Hàng</a>
         <h1 class="linkPage seperation"> | </h1>
-        <a href="#" class="linkPage">Sản Phẩm</a>
+        <a href="{% url 'web_app:sanpham' %}" class="linkPage">Sản Phẩm</a>
         <h1 class="linkPage seperation"> | </h1>
-        <a href="#" class="linkPage">Khuyến Mãi</a>
+        <a href="{% url 'web_app:khuyenmai' %}" class="linkPage">Khuyến Mãi</a>
       </div>
       <div class='contentFooter'>
         <p>Địa chỉ:</p>

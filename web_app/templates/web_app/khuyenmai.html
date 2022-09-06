@@ -1,0 +1,27 @@
+{% extends "web_app/base.html" %} 
+{% load static %} 
+{% block content %}
+<p style="font-size: 70px; margin-top: 1300px; text-align: center">
+  Chương Trình Khuyến Mãi
+</p>
+<table
+  style="border: 2px solid; width: 80%; margin-left: auto; margin-right: auto"
+>
+  <tr style="border: 1px solid">
+    <th style="border: 1px solid; font-size: 40px">STT</th>
+    <th style="border: 1px solid; font-size: 40px">Tên Món</th>
+    <th style="border: 1px solid; font-size: 40px">Giá Hiện Tại</th>
+    <th style="border: 1px solid; font-size: 40px">Khuyến Mãi</th>
+    <th style="border: 1px solid; font-size: 40px">Đánh Giá Tốt</th>
+    <th style="border: 1px solid; font-size: 40px">
+      Giá sau khi áp dụng chương trình khuyến mãi
+    </th>
+  </tr>
+  {% for data in datas %}
+  <tr style="border: 1px solid">
+    <td style="border: 1px solid">Peter</td>
+    <td style="border: 1px solid">Griffin</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock content %}
