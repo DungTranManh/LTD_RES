@@ -8,20 +8,25 @@
   style="border: 2px solid; width: 80%; margin-left: auto; margin-right: auto"
 >
   <tr style="border: 1px solid">
-    <th style="border: 1px solid; font-size: 40px">STT</th>
-    <th style="border: 1px solid; font-size: 40px">Tên Món</th>
-    <th style="border: 1px solid; font-size: 40px">Giá Hiện Tại</th>
-    <th style="border: 1px solid; font-size: 40px">Khuyến Mãi</th>
-    <th style="border: 1px solid; font-size: 40px">Đánh Giá Tốt</th>
-    <th style="border: 1px solid; font-size: 40px">
+    <th style="border: 1px solid; font-size: 40px;padding: 20px 10px;">STT</th>
+    <th style="border: 1px solid; font-size: 40px;padding: 20px 10px;">Tên Món</th>
+    <th style="border: 1px solid; font-size: 40px;padding: 20px 10px;">Giá Hiện Tại</th>
+    <th style="border: 1px solid; font-size: 40px;padding: 20px 10px;">Khuyến Mãi</th>
+    <th style="border: 1px solid; font-size: 40px;padding: 20px 10px;">Đánh Giá Tốt</th>
+    <th style="border: 1px solid; font-size: 40px;padding: 20px 10px;">
       Giá sau khi áp dụng chương trình khuyến mãi
     </th>
   </tr>
   {% for data in datas %}
-  <tr style="border: 1px solid">
-    <td style="border: 1px solid">Peter</td>
-    <td style="border: 1px solid">Griffin</td>
-  </tr>
+    <tr style="border: 1px solid;">
+        <td style="border: 1px solid;font-size: 40px; text-align: center; padding: 20px 10px;">{{forloop.counter}}</td>
+        <td style="border: 1px solid;font-size: 50px; text-align: center;padding: 20px 10px;"><a href="#" style='color: black;'>{{data.name}}</a></td>
+        <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;">{{data.price}} VNĐ</td>        
+        <td style="border: 1px solid; text-align: center; "><p style='color: red;padding: 20px 10px;font-size: 40px;'>{{data.sale}}%</p></td>
+        <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;">{{data.appreciate}}%</td>
+        <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;">{{price_after_sale}}</td>
+    </tr>
+
   {% endfor %}
 </table>
 {% endblock content %}

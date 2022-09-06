@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse
 from .models import Data
+from django.db.models import Q
 # Create your views here.
 
 
@@ -12,7 +13,7 @@ def NhaHang(request):
 
 
 def KhuyenMai(request):
-    get_data = Data.objects.all()
+    get_data = Data.objects.filter(YN_Sale = '1')
     return render(request, 'web_app/khuyenmai.html',{'datas': get_data})
 
 def SanPham(request):

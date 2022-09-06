@@ -5,9 +5,10 @@ from django.db import models
 class Data(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField(null=True,blank=True)
-    price = models.FloatField(null = True,blank= True)
+    price = models.IntegerField(null = True,blank= True)
     describe = models.TextField(null = True, blank=True)
-    sale = models.IntegerField(null = True, blank= True)
+    YN_Sale = models.TextField(max_length=10, default='y')
+    sale = models.IntegerField(default=0)
     appreciate = models.FloatField(null=True, blank=True)
 
     class Meta:
