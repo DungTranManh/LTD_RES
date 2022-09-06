@@ -18,3 +18,7 @@ def KhuyenMai(request):
 
 def SanPham(request):
     return render(request, 'web_app/sanpham.html')
+
+def Detail(request,name_product):
+    get_product = Data.objects.filter(name=name_product)
+    return render(request, 'web_app/detail.html',{'product': get_product})
