@@ -7,7 +7,7 @@ class Data(models.Model):
     name = models.TextField(null=True,blank=True)
     price = models.IntegerField(null = True,blank= True)
     describe = models.TextField(null = True, blank=True)
-    YN_Sale = models.TextField(max_length=10, default='y')
+    YN_Sale = models.TextField()
     sale = models.IntegerField(default=0)
     appreciate = models.FloatField(null=True, blank=True)
 

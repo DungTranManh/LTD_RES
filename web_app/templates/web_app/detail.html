@@ -22,9 +22,14 @@
       font-weight: 200;
     "
   >
-    <p style="font-weight: 700; font-size: 60px">Tên: Sườn Xào Chua Ngọt</p>
-    <p>Giá tham khảo: VNĐ</p>
-    <p>Khuyến mãi:</p>
+    <p style="font-weight: 700; font-size: 60px">Tên: {{product.name}}</p>
+    <p>Giá tham khảo: {{product.price}} VNĐ</p>
+    {% if product.YN_Sale == '0' %}
+      <p>Khuyến mãi: Không có</p>
+    {% else %}
+        <p>Khuyến mãi: </p>
+        <a href="{% url 'web_app:khuyenmai' %}" style='color: red; position: absolute; margin-top: -130px; margin-left: 400px; '> Có</a>
+    {% endif %}
     <p>Đánh giá (*):</p>
     <div
       style="
@@ -37,6 +42,25 @@
         width: 350px;
       "
     ></div>
+    <div style='background-color: #B3D5DD;'>
+      <div style='height:30px; width: 30px; background-color: #EAEC87; margin-top: 40px;float left;'></div>
+      <p style='font-size: 30px; margin-top: -30px; margin-left: 50px;'>Khách hàng đánh giá tốt</p>
+      <div style='height:30px; width: 30px; background-color: #C27B7B; margin-top: 40px;float left;'></div>
+      <p style='font-size: 30px; margin-top: -30px; margin-left: 50px;'>Khách hàng đánh giá không tốt</p>
+    </div>
+    <table style='margin-top:-510px; margin-left: 600px;border: 1px solid;'>
+      <tr>
+        <th style='font-size: 50px;border: 1px solid;padding: 30px;'>Đánh giá tốt</th>
+        <th style='font-size: 50px; padding: 30px;border: 1px solid;'>Đánh giá không tốt</th>
+      </tr>
+      <tr>
+        <td style='text-align: center;border: 1px solid;'>{{product.appreciate}}%</td>
+        <td style='text-align: center;border: 1px solid;'>123%</td>
+      </tr>
+    </table>
+  </div>
+  <div style='position: absolute; margin-top: 2420px;margin-left: -1380px;'>
+    <p style='font-size: 60px;'>Mô tả:</p>
   </div>
 </div>
 
