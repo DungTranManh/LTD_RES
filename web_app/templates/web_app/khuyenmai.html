@@ -24,9 +24,14 @@
         <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;">{{data.price}} VNĐ</td>        
         <td style="border: 1px solid; text-align: center; "><p style='color: red;padding: 20px 10px;font-size: 40px;'>{{data.sale}}%</p></td>
         <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;">{{data.appreciate}}%</td>
-        <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;">50%</td>
+        <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;" id='price_after_sale_{{forloop.counter}}'></td>
     </tr>
-
+    <script>
+      var price_after_sale = {{data.price}} * (100.0 - {{data.sale}}) * 0.01  ;
+      var result = price_after_sale.toString();
+      result += " VNĐ";
+      document.getElementById("price_after_sale_{{forloop.counter}}").innerHTML = result;
+    </script>
   {% endfor %}
 </table>
 {% endblock content %}
