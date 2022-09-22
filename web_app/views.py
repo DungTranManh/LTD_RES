@@ -13,7 +13,7 @@ def NhaHang(request):
 
 
 def KhuyenMai(request):
-    get_data = Data.objects.filter(YN_Sale = '1')
+    get_data = Data.objects.filter(YN_Sale = True)
     return render(request, 'web_app/khuyenmai.html',{'datas': get_data})
 
 def SanPham(request):

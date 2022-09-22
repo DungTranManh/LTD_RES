@@ -11,7 +11,7 @@ class DataAdmin(admin.ModelAdmin):
                        attrs={'rows': 3,
                               'cols': 30})},
     }
-    list_display = ('id','name','price', 'describe', 'YN_Sale','sale','appreciate')
-    list_editable = ('name','price', 'describe','YN_Sale', 'sale','appreciate')
+    list_display = ('id','name','image','price', 'unit', 'describe', 'YN_Sale','sale','appreciate','featured')
+    list_editable = ('name','price','image','unit', 'describe','YN_Sale', 'sale','appreciate','featured')
     list_per_page = 9
 admin.site.register(Data,DataAdmin)
