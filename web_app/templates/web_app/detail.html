@@ -23,7 +23,7 @@
     "
   >
     <p style="font-weight: 700; font-size: 60px">Tên: {{product.name}}</p>
-    <p>Giá tham khảo: {{product.price}} VNĐ</p>
+    <p>Giá tham khảo: {{product.price}} VNĐ / {{product.unit}}</p>
     {% if product.YN_Sale == False %}
       <p>Khuyến mãi: Không có</p>
     {% else %}
@@ -60,14 +60,15 @@
       </tr>
       <script>
         var unsatisfied_percentage = 100.0 - {{product.appreciate}};
-        var result = unsatisfied_percentage.toString();
+        var result = unsatisfied_percentage.toFixed(2).toString();
         result += "%";
         document.getElementById("unsatisfied-percentage").innerHTML = result;
       </script>
     </table>
   </div>
   <div style='position: absolute; margin-top: 2420px;margin-left: -1380px;'>
-    <p style='font-size: 60px; margin-right: 200px; margin-top: 100px;'>Mô tả: {{product.describe}}</p>
+    <h1 style='font-size: 60px; margin-top: 150px; margin-left: 1150px;'>Mô tả</h1>
+    <p style='font-size: 60px; margin-right: 250px;'>{{product.describe}}</p>
   </div>
 </div>
 

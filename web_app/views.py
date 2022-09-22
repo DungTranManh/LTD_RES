@@ -19,6 +19,6 @@ def KhuyenMai(request):
 def SanPham(request):
     return render(request, 'web_app/sanpham.html')
 
-def Detail(request,name_product):
-    get_product = Data.objects.get(name=name_product)
+def Detail(request,product_id):
+    get_product = Data.objects.get(id=product_id)
     return render(request, 'web_app/detail.html',{'product': get_product})

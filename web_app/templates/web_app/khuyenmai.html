@@ -20,7 +20,7 @@
   {% for data in datas %}
     <tr style="border: 1px solid;">
         <td style="border: 1px solid;font-size: 40px; text-align: center; padding: 20px 10px;">{{forloop.counter}}</td>
-        <td style="border: 1px solid;font-size: 50px; text-align: center;padding: 20px 10px;"><a href="{% url 'web_app:detail' data.name %}" style='color: black;'>{{data.name}}</a></td>
+        <td style="border: 1px solid;font-size: 50px; text-align: center;padding: 20px 10px;"><a href="{% url 'web_app:detail' data.id %}" style='color: black;'>{{data.name}}</a></td>
         <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;">{{data.price}} VNĐ</td>        
         <td style="border: 1px solid; text-align: center; "><p style='color: red;padding: 20px 10px;font-size: 40px;'>{{data.sale}}%</p></td>
         <td style="border: 1px solid;font-size: 40px; text-align: center;padding: 20px 10px;">{{data.appreciate}}%</td>
