@@ -1,3 +1,5 @@
+from operator import ge
+from webbrowser import get
 from django.shortcuts import render,HttpResponse
 from .models import Data
 from django.db.models import Q
@@ -5,7 +7,8 @@ from django.db.models import Q
 
 
 def index(request):
-    return render(request, 'web_app/home.html')
+    get_data = Data.objects.filter(featured = True)
+    return render(request, 'web_app/home.html', {'datas': get_data})
 
 
 def NhaHang(request):

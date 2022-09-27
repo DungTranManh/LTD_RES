@@ -29,7 +29,7 @@
     <script>
       var price_after_sale = {{data.price}} * (100.0 - {{data.sale}}) * 0.01  ;
       var result = price_after_sale.toString();
-      result += " VNĐ";
+      result += ".000 VNĐ";
       document.getElementById("price_after_sale_{{forloop.counter}}").innerHTML = result;
     </script>
   {% endfor %}
