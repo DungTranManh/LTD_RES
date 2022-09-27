@@ -1,62 +1,90 @@
-{% extends 'web_app/base.html' %}
-{% block content %}
-<div style="float: left">
+{% extends 'web_app/base.html' %} {% block content %}
+<p style="font-size: 70px; margin-top: 1300px; text-align: center">
+  Thông tin Món Ăn
+</p>
+<div>
   <img
-    src="https://thuvienamthuc.vn/upload/images/2020/08/14/1123.jpg"
+    src="{{product.image}}"
     alt=""
     height="1100px"
     width="900px"
-    style="
-      border-radius: 20px;
-      position: absolute;
-      margin-top: 1300px;
-      margin-left: -1380px;
-    "
+    style="border-radius: 20px; margin-left: 300px; margin-top: 70px"
   />
-  <div
-    style="
-      position: absolute;
-      margin-top: 1300px;
-      margin-left: -200px;
-      font-size: 60px;
-      font-weight: 200;
-    "
-  >
-    <p style="font-weight: 700; font-size: 60px">Tên: {{product.name}}</p>
-    <p>Giá tham khảo: {{product.price}} VNĐ / {{product.unit}}</p>
+  <div style="position: absolute; font-size: 60px; font-weight: 200">
+    <p
+      style="
+        font-weight: 700;
+        font-size: 60px;
+        margin-left: 1400px;
+        margin-top: -1050px;
+      "
+    >
+      Tên: {{product.name}}
+    </p>
+    <p style="margin-left: 1400px">
+      Giá tham khảo: {{product.price}} VNĐ / {{product.unit}}
+    </p>
     {% if product.YN_Sale == False %}
-      <p>Khuyến mãi: Không có</p>
+    <p style="margin-left: 1400px">Khuyến mãi: Không có</p>
     {% else %}
-        <p>Khuyến mãi: </p>
-        <a href="{% url 'web_app:khuyenmai' %}" style='color: red; position: absolute; margin-top: -130px; margin-left: 400px; text-decoration: None; '> Có</a>
+    <p style="margin-left: 1400px">Khuyến mãi:</p>
+    <a
+      href="{% url 'web_app:khuyenmai' %}"
+      style="
+        color: red;
+        position: absolute;
+        margin-left: 1800px;
+        text-decoration: None;
+        margin-top: -130px;
+      "
+    >
+      Có</a
+    >
     {% endif %}
-    <p>Đánh giá (*):</p>
+    <p style="margin-left: 1400px">Đánh giá (*):</p>
     <div
       style="
-        border-radius: 50%;
-        background-image: conic-gradient(#EAEC87 {{ product.appreciate }}%, #C27B7B 0);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 350px;
-        width: 350px;
-      "
+          border-radius: 50%;
+          background-image: conic-gradient(#EAEC87 {{ product.appreciate }}%, #C27B7B 0);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 350px;
+          width: 350px;
+          margin-left: 1400px;
+        "
     ></div>
-    <div style='background-color: #B3D5DD;'>
-      <div style='height:30px; width: 30px; background-color: #EAEC87; margin-top: 40px;float left;'></div>
-      <p style='font-size: 30px; margin-top: -30px; margin-left: 50px;'>Khách hàng đánh giá tốt</p>
-      <div style='height:30px; width: 30px; background-color: #C27B7B; margin-top: 40px;float left;'></div>
-      <p style='font-size: 30px; margin-top: -30px; margin-left: 50px;'>Khách hàng đánh giá không tốt</p>
+    <div style="background-color: #b3d5dd; margin-left: 1400px">
+      <div
+        style="height:30px; width: 30px; background-color: #EAEC87; margin-top: 40px;float left;"
+      ></div>
+      <p style="font-size: 30px; margin-top: -30px; margin-left: 50px">
+        Khách hàng đánh giá tốt
+      </p>
+      <div
+        style="height:30px; width: 30px; background-color: #C27B7B; margin-top: 40px;float left;"
+      ></div>
+      <p style="font-size: 30px; margin-top: -30px; margin-left: 50px">
+        Khách hàng đánh giá không tốt
+      </p>
     </div>
-    <table style='margin-top:-510px; margin-left: 600px;border: 1px solid;'>
+    <table style="margin-top: -500px; margin-left: 2000px; border: 1px solid">
       <tr>
-        <th style='font-size: 50px;border: 1px solid;padding: 30px;'>Đánh giá tốt</th>
-        <th style='font-size: 50px; padding: 30px;border: 1px solid;'>Đánh giá không tốt</th>
+        <th style="font-size: 50px; border: 1px solid; padding: 30px">
+          Đánh giá tốt
+        </th>
+        <th style="font-size: 50px; padding: 30px; border: 1px solid">
+          Đánh giá không tốt
+        </th>
       </tr>
       <tr>
-        <td style='text-align: center;border: 1px solid;'>{{product.appreciate}}%</td>
-        <td style='text-align: center;border: 1px solid;' id='unsatisfied-percentage'>
+        <td style="text-align: center; border: 1px solid">
+          {{product.appreciate}}%
         </td>
+        <td
+          style="text-align: center; border: 1px solid"
+          id="unsatisfied-percentage"
+        ></td>
       </tr>
       <script>
         var unsatisfied_percentage = 100.0 - {{product.appreciate}};
@@ -66,10 +94,7 @@
       </script>
     </table>
   </div>
-  <div style='position: absolute; margin-top: 2420px;margin-left: -1380px;'>
-    <h1 style='font-size: 60px; margin-top: 150px; margin-left: 1150px;'>Mô tả</h1>
-    <p style='font-size: 60px; margin-right: 250px;'>{{product.describe}}</p>
-  </div>
+  <h1 style="font-size: 60px; margin-top: 130px;text-align: center;">Mô tả</h1>
+  <p style="font-size: 60px; margin-left: 250px; margin-right: 200px;">{{product.describe}}</p>
 </div>
-
 {% endblock content %}
