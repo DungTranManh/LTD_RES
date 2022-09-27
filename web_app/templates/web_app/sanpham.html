@@ -2,4 +2,19 @@
 
 {% block content %}
     <p style='font-size: 70px; margin-top: 1300px; text-align: center;'>Tất Cả Món Ăn Tại Nhà Hàng </p>
+    <div class="grid-container" style='display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #b3d5dd;
+    padding: 10px; margin-left: -150px;'>
+    {% for data in datas  %}
+        <div class="grid-item" style='
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;'>
+            <img src="{{data.image}}" alt="" style='border-radius: 50%' height = 450px; width = 450px;>
+            <a href="{% url 'web_app:detail' data.id %}" style='text-decoration: None; color: red;'><h1>{{data.name}}</h1></a>
+            <h2>Giá: {{data.price}} VNĐ / {{data.unit}}</h2>
+        </div>
+    {% endfor %}
+    </div>
 {% endblock content %}

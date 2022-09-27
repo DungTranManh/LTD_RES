@@ -20,7 +20,8 @@ def KhuyenMai(request):
     return render(request, 'web_app/khuyenmai.html',{'datas': get_data})
 
 def SanPham(request):
-    return render(request, 'web_app/sanpham.html')
+    get_all_data = Data.objects.all()
+    return render(request, 'web_app/sanpham.html', {'datas': get_all_data})
 
 def Detail(request,product_id):
     get_product = Data.objects.get(id=product_id)
