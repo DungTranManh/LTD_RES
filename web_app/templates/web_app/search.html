@@ -1,0 +1,23 @@
+{% extends 'web_app/base.html' %} 
+{% load static %}
+{% block content %}
+<h1 style="margin-top: 1300px; text-align: center; font-size: 100px">
+  Tìm kiếm
+</h1>
+<form action="">
+  <input
+    type="search"
+    class="input-form"
+    name="search-value"
+    placeholder="Nhập thông tin tìm kiếm..."
+    style="margin-top: 0px; margin-left: 1000px; height: 100px; width: 1000px"
+  />
+  <button
+    class="button-form"
+    type="submit"
+    style="margin-top: 0px; margin-left: 2050px; width: 100px; height: 100px"
+  >
+    <img src="{% static '/images/search-icon.png' %}" alt="search-icon " />
+  </button>
+</form>
+{% endblock content %}

@@ -24,7 +24,10 @@
         class="NaviAndSearchbar logo"
       />
       <div class="NaviAndSearchbar">
-        <form action="">
+        <div class='input-form'>
+          <a href="{% url 'web_app:searchpage' %}" style='text-decoration: None;'><h1 style='font-size: 40px; text-align: center; color: black; margin-top: 12px; '>Tìm kiếm sản phẩm</h1></a>
+        </div>
+        {% comment %} <form action="">
           <input
             type="search"
             class="input-form"
@@ -37,7 +40,7 @@
               alt="search-icon "
             />
           </button>
-        </form>
+        </form> {% endcomment %}
       </div>
     </div>
 

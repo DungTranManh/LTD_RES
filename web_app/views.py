@@ -1,8 +1,10 @@
-from operator import ge
-from webbrowser import get
 from django.shortcuts import render,HttpResponse
 from .models import Data
 from django.db.models import Q
+from rest_framework import filters
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 # Create your views here.
 
 
@@ -26,3 +28,7 @@ def SanPham(request):
 def Detail(request,product_id):
     get_product = Data.objects.get(id=product_id)
     return render(request, 'web_app/detail.html',{'product': get_product})
+
+
+def SearchPage(request):
+    return render(request, 'web_app/search.html')

@@ -36,8 +36,6 @@ body {
 
 .button-form {
     position: absolute;
-    width: 85px;
-    height: 85px;
     background-color: #fff8f8;
     border-radius: 15px;
     margin-left: 830px;
@@ -49,14 +47,11 @@ body {
   }*/
 .input-form {
     position: absolute;
-    height: 90.5px;
-    width: 800px;
     background-color: #ec8787;
     border-radius: 20px;
     font-size: 35px;
     padding: 12px 30px;
     border: none;
-    margin-top: 100px;
 }
 
 ::placeholder {

@@ -7,5 +7,6 @@ urlpatterns = [
     path('nhahang/', views.NhaHang, name='nhahang' ),
     path('khuyenmai/', views.KhuyenMai, name='khuyenmai'),
     path('sanpham/', views.SanPham, name='sanpham'),
-    path('sanpham/<int:product_id>/', views.Detail, name='detail')
+    path('sanpham/<int:product_id>/', views.Detail, name='detail'),
+    path('search/', views.SearchPage, name='searchpage')
 ]
