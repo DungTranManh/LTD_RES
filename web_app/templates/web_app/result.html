@@ -1,18 +1,73 @@
-{% extends 'web_app/search.html' %}
-{% load static %}
+{% extends 'web_app/search.html' %} 
+{% load static %} 
 {% block resultsearch %}
-<hr style='margin-left: 200px; margin-right: 200px; background-color: black; height: 20px; border-radius: 10px; margin-top: 300px;'>
-<h1 style='text-align: center; padding-top: 10px ;font-size: 40px;'>Kết quả tìm kiếm cho cụm "{{SearchRequest}}"</h1>
-<div id='content'></div>
+<hr
+  style="
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: black;
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 300px;
+  "
+/>
+<h1 style="text-align: center; padding-top: 10px; font-size: 40px">
+  Kết quả tìm kiếm cho cụm "{{SearchRequest}}"
+</h1>
+
+<div id="content">
+</div>
+
 <script>
-    fetch('http://127.0.0.1:8000/search/{{SearchRequest}}/')
-    .then(res => {return res.json()})
-    .then((objectData)=>{
-        let tableData = "";
-        objectData.map((values) => {
-            tableData += `<img src='${values.image}' style="margin-left: 500px;"></img>`
-        });
-        document.getElementById("content").innerHTML=tableData;
+  fetch("http://127.0.0.1:8000/search/{{SearchRequest}}/")
+    .then((res) => {
+      return res.json();
     })
+    .then((objectData) => {  
+      let tableData = "";
+      objectData.map((values) => {
+        if (values.YN_Sale == true){
+            values.YN_Sale = "Có";
+        }else{
+            values.YN_Sale = "Không có";
+        }
+        let id_product = parseInt(values.id);
+        tableData += `<img
+        src="${values.image}"
+        alt=""
+        height="500px;"
+        width="500px;"
+        style="margin-left: 400px; margin-top: 100px"
+      />
+      <a href="http://127.0.0.1:8000/sanpham/${values.id}" style="text-decoration: None">
+        <h1 style="font-size: 50px; margin-top: -500px; margin-left: 1000px">
+          ${values.name}
+        </h1>
+      </a>
+      <hr
+        style="
+          margin-left: 200px;
+          margin-right: 200px;
+          background-color: black;
+          height: 5px;
+          border-radius: 10px;
+          margin-top: -20px;
+          margin-left: 1000px;
+          margin-right: 300px;
+        "
+      />
+      <h2 style="font-size: 40px; margin-top: 50px; margin-left: 1000px">
+        Giá tham khảo: ${values.price} VNĐ / ${values.unit}
+      </h2>
+      <h3 style="margin-left: 1000px; font-size: 40px; margin-right: 400px">
+        Mô tả: ${values.describe}
+      </h3>
+      <h3 style="margin-left: 1000px; font-size: 40px; margin-right: 400px">
+        Chương trình khuyến mãi: ${values.YN_Sale}
+      </h3>
+      `;
+      });
+      document.getElementById("content").innerHTML = tableData;
+    });
 </script>
 {% endblock resultsearch %}
