@@ -13,6 +13,9 @@ def index(request):
     get_data = Data.objects.filter(featured = True)
     return render(request, 'web_app/home.html', {'datas': get_data})
 
+def test(request):
+    return HttpResponse("TEST SUCCESFULL")
+
 
 def NhaHang(request):
     return render(request, 'web_app/nhahang.html')
@@ -32,7 +35,12 @@ def Detail(request,product_id):
 
 
 def SearchPage(request):
-    return render(request, 'web_app/search.html')
+    data_search_text = request.GET.get('search-value')
+    if data_search_text is None:
+        return render(request,'web_app/result.html')
+    return render(request, 'web_app/result.html',{'SearchRequest': data_search_text})
+
+
 
 class SearchAPIVIEW(APIView):
     def get(self,request,text_search):

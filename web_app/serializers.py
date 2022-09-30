@@ -6,4 +6,4 @@ from .models import Data
 class SearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Data
-        fields = ['name','describe','image','price','unit',]
+        fields = ['id','name','describe','image','price','unit',]

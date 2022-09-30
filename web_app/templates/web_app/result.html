@@ -1,0 +1,18 @@
+{% extends 'web_app/search.html' %}
+{% load static %}
+{% block resultsearch %}
+<hr style='margin-left: 200px; margin-right: 200px; background-color: black; height: 20px; border-radius: 10px; margin-top: 300px;'>
+<h1 style='text-align: center; padding-top: 10px ;font-size: 40px;'>Kết quả tìm kiếm cho cụm "{{SearchRequest}}"</h1>
+<div id='content'></div>
+<script>
+    fetch('http://127.0.0.1:8000/search/{{SearchRequest}}/')
+    .then(res => {return res.json()})
+    .then((objectData)=>{
+        let tableData = "";
+        objectData.map((values) => {
+            tableData += `<img src='${values.image}' style="margin-left: 500px;"></img>`
+        });
+        document.getElementById("content").innerHTML=tableData;
+    })
+</script>
+{% endblock resultsearch %}
