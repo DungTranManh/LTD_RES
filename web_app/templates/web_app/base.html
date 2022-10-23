@@ -12,7 +12,14 @@
   </head>
   <body>
     <div class='centerHeader total'></div>
-      <div class="NaviAndSearchbar navi">
+      <style>
+        .navbartext a:hover, .titleFooter a:hover, .input-form h1:hover {
+          transform: scale(1.5);
+          transition: 0.2s ease-in-out;
+          color: white;
+      }
+      </style>
+      <div class="NaviAndSearchbar navi navbartext">
         <a href="{% url 'web_app:home' %}" style="margin-left: -2px;">Home</a>
         <a href="{% url 'web_app:nhahang' %}">Nhà Hàng</a>
         <a href="{% url 'web_app:sanpham' %}">Sản Phẩm</a>
